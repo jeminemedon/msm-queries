@@ -1,0 +1,13 @@
+<h1><%= @the_director.name %></h1>
+<p>DOB: <%= @the_director.dob.strftime("%Y-%m-%d") if @the_director.dob %></p>
+<p>Bio: <%= @the_director.bio %></p>
+
+<h2>Filmography</h2>
+<ul>
+  <% @filmography.each do |movie| %>
+    <li>
+      <%= movie.title %> —
+      <a href="/movies/<%= movie.id %>">Show details</a>
+    </li>
+  <% end %>
+</ul>

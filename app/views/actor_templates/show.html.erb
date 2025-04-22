@@ -1,0 +1,11 @@
+<h1><%= @the_actor.name %></h1>
+<p>DOB: <%= @the_actor.dob.strftime("%Y-%m-%d") if @the_actor.dob %></p>
+
+<h2>Characters Played</h2>
+<ul>
+  <% @characters.each do |char| %>
+    <li>
+      <%= char.name %> in <%= char.movie.title %> (Directed by <%= char.movie.director.name %>)
+    </li>
+  <% end %>
+</ul>
